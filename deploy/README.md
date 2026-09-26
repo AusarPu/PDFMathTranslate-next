@@ -47,3 +47,4 @@
 
 - 升上游：`cd src && git fetch upstream && git rebase upstream/main`（补丁集中在 `pdf2zh_next/config/translate_engine_model.py`）
 - 备份：本目录（除 `.venv`/`sandbox`）已随 fork 的 `ausar-patches` 分支的 `deploy/` 目录版本化
+- **计划任务说明**（2026-09-27 切换）：`PDF2ZH UserWatch Logon/Unlock` 的动作字面仍指向旧路径 `d:\Supporting\pdf2zh\build\pdf2zh-watch.ps1`（直接修改需要管理员权限）；该文件已改为"转发到本目录 watch.ps1"，功能正常。如需正式修正任务动作：用管理员权限改，或保持现状（不影响使用）。
