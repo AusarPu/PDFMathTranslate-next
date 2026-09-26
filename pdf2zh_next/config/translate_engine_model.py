@@ -215,11 +215,11 @@ class DeepSeekSettings(BaseModel):
     )
     deepseek_reasoning_effort: str | None = Field(
         default=None,
-        description="Reasoning effort for DeepSeek thinking mode (high/max)",
+        description="Reasoning effort for DeepSeek thinking mode (low/high/max)",
         json_schema_extra={
             "gui": {
                 "widget": "dropdown",
-                "choices": ["high", "max"],
+                "choices": ["low", "high", "max"],
                 "default_on_show": "high",
                 "visible_when": {
                     "field": "deepseek_thinking_mode",
@@ -240,10 +240,11 @@ class DeepSeekSettings(BaseModel):
         if self.deepseek_thinking_mode not in (None, "enabled", "disabled"):
             raise ValueError("DeepSeek thinking mode must be enabled or disabled")
         if self.deepseek_reasoning_effort and self.deepseek_reasoning_effort not in (
+            "low",
             "high",
             "max",
         ):
-            raise ValueError("DeepSeek reasoning effort must be high or max")
+            raise ValueError("DeepSeek reasoning effort must be low, high or max")
 
     def transform(self) -> OpenAISettings:
         settings = OpenAISettings(
