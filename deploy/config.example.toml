@@ -1,0 +1,24 @@
+# pdf2zh-next 配置模板
+# 用法：复制为 config.toml，把 sk-REPLACE_ME 换成你的 DeepSeek API 密钥
+deepseek = true
+term_deepseek = true
+
+[translation]
+lang_in = "en"
+lang_out = "zh-CN"
+
+[pdf]
+no_mono = true
+watermark_output_mode = "no_watermark"
+
+[deepseek_detail]
+translate_engine_type = "DeepSeek"
+deepseek_model = "deepseek-flash"
+deepseek_api_key = "sk-REPLACE_ME"
+deepseek_thinking_mode = "disabled"
+
+[term_deepseek_detail]
+translate_engine_type = "DeepSeek"
+term_deepseek_model = "deepseek-flash"
+term_deepseek_api_key = "sk-REPLACE_ME"
+term_deepseek_thinking_mode = "disabled"
